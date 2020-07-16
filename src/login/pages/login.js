@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { Container, Header, Content, Button, Text, Item, Input, Icon } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
@@ -8,33 +8,32 @@ export class login extends Component {
         return (
             <Container>
                 <Grid>
-                    <Row style={{ backgroundColor: 'red' }}>
+                    <Row>
                         <Col>
-                            <Image style={{ height: 100, }} resizeMode='contain' source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png', }} />
-                            <Text>Welcome Back</Text>
-                            <Text>Sign in continue</Text>
+                            <View style={[styles.boxCenter]}>
+                                <Image style={{ height: 100, }} resizeMode='contain' source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png', }} />
+                                <Text style={[styles.center,]}>Giriş Yap</Text>
+                            </View>
                         </Col>
                     </Row>
 
-                    <Row style={{ backgroundColor: 'yellow' }}>
-                        <Col>
+                    <Row>
+                        <Col style={[styles.boxCenter]}>
                             <Item>
-                                <Icon active name='home' />
-                                <Input placeholder='Icon Textbox' />
+                                <Input placeholder='E-posta' />
                             </Item>
                             <Item>
-                                <Icon active name='home' />
-                                <Input placeholder='Icon Textbox' />
+                                <Input placeholder='Şifre' />
                             </Item>
                         </Col>
                     </Row>
 
-                    <Row style={{ backgroundColor: 'blue' }}>
+                    <Row>
                         <Col>
-                            <TouchableOpacity>
-                                <Text style={{}}>LOGIN</Text>
+                            <TouchableOpacity style={[styles.button,]}>
+                                <Text style={[styles.buttonText,]}>Giriş Yap</Text>
                             </TouchableOpacity>
-                            <Text>Don't have an account? create a new account!</Text>
+                            <Text style={[styles.center,]}>Don't have an account? create a new account!</Text>
                         </Col>
                     </Row>
                 </Grid>
@@ -43,4 +42,27 @@ export class login extends Component {
     }
 }
 
+const styles = StyleSheet.create({
+    center: {
+        textAlign: 'center',
+    },
+    button: {
+        backgroundColor: '#009253',
+        margin: 15,
+        borderRadius: 10,
+    },
+    buttonText: {
+        color: 'white',
+        textAlign: 'center',
+        margin: 15,
+
+    },
+    boxCenter: {
+        justifyContent: 'center',
+        flex: 1,
+    }
+})
+
 export default login
+
+
