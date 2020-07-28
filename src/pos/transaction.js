@@ -2,10 +2,24 @@ import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, ListView, FlatList, StyleSheet } from 'react-native'
 import { Container, Header, Content, List, ListItem } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import axios from 'axios';
+import apiClient from '../lib/apiClient'
+
+// axios.get('https://jsonplaceholder.typicode.com/todos/1')
+//   .then(function (response) {
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   })
+//   .finally(function () {
+//   });
+const apiClients = new apiClient();
+
+console.log(apiClients.conSol("assdaad"))
 
 export class transaction extends Component {
   render() {
-
     return (
       <View>
         {/* <Text style={{backgroundColor:'purple',}}>
@@ -28,11 +42,11 @@ export class transaction extends Component {
         <FlatList
           data={[
             { key: 'Devin',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
-            { key: 'Devin',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
-            { key: 'Devin',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
-            { key: 'Devin',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
-            { key: 'Devin',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
-            { key: 'Devin',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
+            { key: 'Devin1',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
+            { key: 'Devin2',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
+            { key: 'Devin3',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
+            { key: 'Devin4',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
+            { key: 'Devin5',date:22, hour: '14:20', inst: 'Tek çekim', status: 'Başarılı', bank: 'BKM Expres', amount: '5 TL', process:'81238231' },
           ]}
           renderItem={({ item }) =>
             <Row style={{ backgroundColor:'#c8c8c8', margin:5, }}>

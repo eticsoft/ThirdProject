@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { Container, Header, Content, Button, Text, Item, Input, Icon } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import { createStore } from 'redux'
+
 
 export class login extends Component {
+    
     render() {
         return (
             <Container>
@@ -30,7 +33,7 @@ export class login extends Component {
 
                     <Row>
                         <Col>
-                            <TouchableOpacity style={[styles.button,]}>
+                            <TouchableOpacity onPress={() => console.log("as2d")} style={[styles.button,]}>
                                 <Text style={[styles.buttonText,]}>Giriş Yap</Text>
                             </TouchableOpacity>
                             <Text style={[styles.center,]}>Don't have an account? create a new account!</Text>
