@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.emlakkatilim"
+        applicationId "com.thirdproject"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
