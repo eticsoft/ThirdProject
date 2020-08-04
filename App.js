@@ -26,6 +26,11 @@ import {
 import React, { useEffect, useRef, useState } from 'react';
 
 import CounterReducer from './src/reducers/CounterReducer';
+import Login from './src/pages/user/login';
+import Register from './src/pages/user/register';
+import HomeDashboard from './src/pages/dashboard/index'
+import NewPayment from './src/pages/dashboard/newPayment/index'
+import CreateOrder from './src/pages/dashboard/newPayment/createOrder'
 import { HomeScreen } from './src/home_screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { ProfileScreen } from './src/profile_screen';
@@ -84,87 +89,33 @@ const App: () => React$Node = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name='Home'
-            component={HomeScreen}
+            name='Login'
+            component={Login}
             options={{ title: 'Welcome' }}
           />
           <Stack.Screen
-            name='Profile'
-            component={ProfileScreen}
-            options={{ title: 'Jane Profile' }}
+            name='Register'
+            component={Register}
+            options={{ title: 'Kayıt Ol' }}
+          />
+          <Stack.Screen
+            name='HomeDashboard'
+            component={HomeDashboard}
+            options={{ title: 'Home Dashboard' }}
+          />
+          <Stack.Screen
+            name='NewPayment'
+            component={NewPayment}
+            options={{ title: 'New Payment' }}
+          />
+          <Stack.Screen
+            name='CreateOrder'
+            component={CreateOrder}
+            options={{ title: 'Create Order' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
-    // ///Fetch api
-    //  <View style={{flex:1, padding:40}}>
-    //       {isLoading ? <ActivityIndicator/> : 
-    //       <FlatList 
-    //         data={data} 
-    //         keyExtractor={({id}, index) => id} 
-    //         renderItem={({item}) => <Text>{item.title}, {item.releaseYear}</Text>}
-    //         />}
-    //     </View> 
-
-
-
-    ///Animation
-    // <View style={{marginVertical:50}}>
-    //   <Animated.View style={{ backgroundColor:'black', opacity: fadeAnim, width:100, height:100}}>
-    //     <Text>I am fading</Text>
-    //   </Animated.View>
-    //   <Button title='Fade in' onPress={fadeIn}/>
-    //   <Button title='Fade out' onPress={fadeOut}/>
-    // </View>
-
-
-    ////////////Dimension
-    // <SafeAreaView>
-    //   <View style={{ padding: 50 }}>
-    //     <Text>'Window width is {dimensions.window.width}'</Text>
-    //     <Text>'Window Height is {dimensions.window.height}'</Text>
-    //     <Text>'Screen width is {dimensions.screen.width}'</Text>
-    //     <Text>'Screen Height is {dimensions.screen.height}'</Text>
-    //   </View>
-    // </SafeAreaView>
-
-    //Image
-    // <View>
-    //   <Image
-    //     style={{ width: 100, height: 100 }}
-    //     source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-    //   />
-    // </View>
-
-
-    //SectionList
-    // <SafeAreaView style={styles.container}>
-    //   <SectionList
-    //     sections={[
-    //       {
-    //         title: "Main dishes",
-    //         data: ["Pizza", "Burger", "Risotto"]
-    //       },
-    //       {
-    //         title: "Sides",
-    //         data: ["French Fries", "Onion Rings", "Fried Shrimps"]
-    //       },
-    //       {
-    //         title: "Drinks",
-    //         data: ["Water", "Coke", "Beer"]
-    //       },
-    //       {
-    //         title: "Desserts",
-    //         data: ["Cheese Cake", "Ice Cream"]
-    //       }
-    //     ]}
-    //     keyExtractor={(item, index) => item + index}
-    //     renderItem={(item) => (<Text>{item.item}</Text>)}
-    //     renderSectionHeader={({ section: { title } }) => (
-    //       <Text style={styles.header}>{title}</Text>
-    //     )}
-    //   />
-    // </SafeAreaView>
   );
 };
 
