@@ -23,7 +23,7 @@ const login = ({navigation}) => {
                 </View>
                 <View style={[styles.registerContainer,{ flex: .5, }]}>
                     <TouchableOpacity><Text style={[styles.registerContainerText]}> Şifremi Unuttum </Text></TouchableOpacity>
-                    <TouchableOpacity><Text style={[styles.registerContainerText]}> Üye Ol </Text></TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Register')}><Text style={[styles.registerContainerText]}> Üye Ol </Text></TouchableOpacity>
                 </View>
             </View>
         </View>
